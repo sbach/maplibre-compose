@@ -10,4 +10,6 @@ jgitver {
   nonQualifierBranches("main")
 }
 
+ext["base_tag"] = "v0.12.1-kotlin2320"
+
 tasks.withType<AbstractTestTask>().configureEach { failOnNoDiscoveredTests = false }

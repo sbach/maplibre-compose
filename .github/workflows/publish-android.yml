@@ -25,7 +25,6 @@ jobs:
           ./gradlew
           :lib:maplibre-compose:publishAndroidPublicationToGitHubPackagesRepository
           :lib:maplibre-compose:publishKotlinMultiplatformPublicationToGitHubPackagesRepository
-          -x dokkaGeneratePublicationHtml
         env:
           ORG_GRADLE_PROJECT_githubUser: ${{ github.actor }}
           ORG_GRADLE_PROJECT_githubToken: ${{ secrets.GITHUB_TOKEN }}

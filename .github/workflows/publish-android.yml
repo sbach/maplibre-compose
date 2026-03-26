@@ -20,10 +20,12 @@ jobs:
           distribution: temurin
           java-version: 21
       - uses: gradle/actions/setup-gradle@v4
-      - name: List publish tasks
-        run: ./gradlew :lib:maplibre-compose:tasks --all 2>&1 | grep -i 'publish.*GitHub\|GitHubPackages' || true
       - name: Publish maplibre-compose Android AAR
-        run: ./gradlew :lib:maplibre-compose:publishAllPublicationsToGitHubPackagesRepository
+        run: >-
+          ./gradlew
+          :lib:maplibre-compose:publishAndroidPublicationToGitHubPackagesRepository
+          :lib:maplibre-compose:publishKotlinMultiplatformPublicationToGitHubPackagesRepository
+          -x dokkaGeneratePublicationHtml
         env:
           ORG_GRADLE_PROJECT_githubUser: ${{ github.actor }}
           ORG_GRADLE_PROJECT_githubToken: ${{ secrets.GITHUB_TOKEN }}

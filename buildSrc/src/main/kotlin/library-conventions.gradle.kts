@@ -43,7 +43,7 @@ publishing {
   repositories {
     maven {
       name = "GitHubPackages"
-      setUrl("https://maven.pkg.github.com/maplibre/maplibre-compose")
+      setUrl("https://maven.pkg.github.com/sbach/maplibre-compose")
       credentials {
         username = project.properties["githubUser"]?.toString()
         password = project.properties["githubToken"]?.toString()
